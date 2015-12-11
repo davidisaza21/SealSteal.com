@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SealSteal</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+</head>
+<body>
+
+  <div class="SSHeader">
+    <ul id="SSNav">
+      <li id="SSLinks">
+        <%= link_to "Home", root_path %>
+        <%= link_to image_tag("arrows.png"), root_path, :class => "SSArrow" %>
+      </li> 
+      <li id="SSLinks">
+        <%= link_to "Shop", root_path %>
+        <%= link_to image_tag("arrows.png"), root_path, :class => "SSArrow" %>
+      </li>
+      <li id="SSLinks">
+        <%= link_to "Featured", root_path %>
+        <%= link_to image_tag("arrows.png"), root_path, :class => "SSArrow" %>
+      </li>
+    </ul>
+
+
+    <%= link_to image_tag("logo.png"), root_path, :class => "SSLogo" %>
+
+
+
+
+    <% if current_order %>
+      <p id="HdBasket">
+        
+        <span id="SSCart">
+          <%= link_to image_tag("shopping_cart.png"), basket_path %>
+            <span id="SSBQ">
+              <% @total_basket = current_order.total_items %>
+              <% if @total_basket > 0 %>
+                <%= current_order.total_items %>
+              <% end %>
+            </span>
+        </span>
+        <!-- <%= link_to "Checkout", checkout_path %> -->
+      </p>
+      <br>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
+
+
+<%= yield %>
+
+</body>
+</html>

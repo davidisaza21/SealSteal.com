@@ -1,0 +1,85 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+@import "products";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*font: inherit;*/
+    vertical-align: baseline;
+}
+
+body {
+  font-family: 'Varela Round', sans-serif;;
+  font-size: golden-ratio(14px,  1);
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+ul {
+	list-style: none;
+}
+.SSLogo img {
+	margin-top: 5px;
+}
+div.SSHeader {
+	@include outer-container;
+	height: 82px;
+	/*border: solid;*/
+	border-bottom: inset 2px;
+}
+ul#SSNav {
+	padding: 0;
+	margin: 30px 65px;
+	display: inline-flex;
+	width: 35%;
+	float: left;
+}
+li#SSLinks {
+	margin-right: 38px;
+}
+.SSArrow img {
+	height: 13px;
+  padding-bottom: 2px;
+}
+span#SSCart {
+	list-style: none;
+	width: 25px;
+}
+#SSCart img {
+	margin-top: 1.8vh;
+}
+#SSBQ {
+	padding: 8px;
+	background: url("cart_circle.png") no-repeat;
+	background-position: center;
+	background-size: 22px;
+	font-size: 11px;
+	color: white;
+  vertical-align: top;
+  margin-left: -1.6vw;
+  font-weight: bolder;
+}
+#HdBasket {
+	float: right;
+	width: 350px;
+	text-align: right;
+	/*border: 1px solid black;*/
+	margin: 20px 65px;
+}
