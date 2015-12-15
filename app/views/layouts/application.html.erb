@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 <body>
 
@@ -27,33 +27,64 @@
       </li>
     </ul>
 
-
     <%= link_to image_tag("logo.png"), root_path, :class => "SSLogo" %>
 
-
-
-
     <% if current_order %>
-      <p id="HdBasket">
-        
-        <span id="SSCart">
-          <%= link_to image_tag("shopping_cart.png"), basket_path %>
-            <span id="SSBQ">
-              <% @total_basket = current_order.total_items %>
-              <% if @total_basket > 0 %>
-                <%= current_order.total_items %>
-              <% end %>
-            </span>
+    <p id="HdBasket">
+
+      <span id="SSCart">
+        <%= link_to image_tag("shopping_cart.png"), basket_path %>
+        <span id="SSBQ">
+          <% @total_basket = current_order.total_items %>
+          <% if @total_basket > 0 %>
+          <%= current_order.total_items %>
+          <% end %>
         </span>
-        <!-- <%= link_to "Checkout", checkout_path %> -->
-      </p>
-      <br>
-      <%= flash[:notice] %>
+      </span>
+      <!-- <%= link_to "Checkout", checkout_path %> -->
+    </p>
+    <br>
+    <!-- <%= flash[:notice] %> -->
     <% end %>
   </div>
 
+  <%= yield %>
 
-<%= yield %>
+  <div class='SSFooter'>
+    <ul id='SSFooterBlocks'>
+      <li id='SSPages'>
+      </li>
+      <li id='SSPages'>
+      </li>
+      <li id='SSPages'>
+      </li>
+      <br>
+      <li id='SSCopy'>
+        Seal Steal is an independant company.
+        <br>
+        &copy;2015 SealSteal.com. All rights reserved.
+      </li>
+    </ul>
+    <ul id='SSPayments'>
+      <li id='SSCardProcessor'>
+      </li>
+      <li id='SSCardProcessor'>
+      </li>
+      <li id='SSCardProcessor'>
+      </li>
+    </ul>
+    <ul id='SSSocial'>
+      <li id='SSSocialLinks'>
+      </li>
+      <li id='SSSocialLinks'>
+      </li>
+      <li id='SSSocialLinks'>
+      </li>
+      <li id='SSSocialLinks'>
+      </li>
+    </ul>
+  </div>
+
 
 </body>
 </html>

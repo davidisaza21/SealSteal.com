@@ -83,3 +83,8 @@ span#SSCart {
 	/*border: 1px solid black;*/
 	margin: 20px 65px;
 }
+div.SSFooter {
+	@include span-columns(4);
+	background-color: #ABABAB;
+	height: 168px;
+}
